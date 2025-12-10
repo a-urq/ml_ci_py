@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.16.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ml_ci_py"
+version = "0.1.0"
+description = "A machine learning model made to predict the probability of convective initiation within a 2-hour lead time model, using RAP environmental parameters for predictors."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICEN[CS]E*"]
+authors = [
+  { name="Amelia Urquhart" }, { name="Ricky Cavaliero" }, { name="Eric Loken" }
+]
+
+requires-python = ">=3.10"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "joblib",
+    "pygrib",
+    "scipy",
+    "scikit-learn",
+    "requests",
+    "packaging"
+]
+
+[project.optional-dependencies]
+testing = [
+    "matplotlib",
+    "cartopy"
+]
+
+[project.urls]
+Homepage = "https://github.com/a-urq/ml-ci-py"
+
+[tool.hatch.build.targets.sdist]
+include = ["README.md", "ml_ci_py/**"]
+
+[tool.hatch.build.targets.wheel]
+include = ["ml_ci_py/**"]

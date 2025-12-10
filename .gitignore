@@ -1,0 +1,6 @@
+# Ignore pycaches
+__pycache__/
+
+# Ignore ML-CI/MRMS test output
+mlci-mrms-output.png
+
